@@ -249,6 +249,15 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // Create a function called MakePerson which takes in name, birthday, ssn as its parameters and returns a new object with all of the information that you passed in.
 
   //Code Here
+  function MakePerson(name, birthday, ssn){
+    return {
+      'name' : name,
+      'birthday' : birthday,
+      'ssn' : ssn
+    };
+  }
+  var luke = MakePerson('Luke', '4-8-88', 'you wish, dude');
+  console.log(luke);
 
 
 
@@ -259,7 +268,16 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // Create a function called MakeCard which takes in all the data it needs to make a Credit Card object and returns that object so that whenever you invoke MakeCard, you get a brand new credit card.
 
   //Code Here
-  
+  function MakeCard(name, num, expDate, ccv){
+    this.name = name;
+    this.num = num;
+    this.expDate = expDate;
+    this.ccv = ccv;
+  }
+  var newCard = new MakeCard('Luke W Jensen', '5555 0000 1111 2222', '12/25/18', '999');
+  var newerCard = new MakeCard('Michelle B Zundel', '6666 9999 8888 4444', '10/31/17', '444');
+  console.log(newCard);
+  console.log(newerCard);
   
   
 //NEXT PROBLEM
@@ -272,5 +290,15 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 */
 
   //Code Here
-
-
+  function bindCard(person, creditcard){
+    var newObj = {};
+    for(prop in person){
+      newObj[prop] = person[prop];
+    }
+    for(prop in creditcard){
+      newObj[prop] = creditcard[prop];
+    }
+    return newObj;
+  }
+  var solution = bindCard(luke, newerCard);
+  console.log(solution);
