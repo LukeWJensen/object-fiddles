@@ -135,11 +135,22 @@ Instead, console.log your whole backPack object and then check out the console. 
 //Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
 
   //Code Here
+  var states = {
+    'Utah' : 2000,
+    'California' : 50000,
+    'New York' : 9000,
+    'Nevada' : 3000,
+    'Idaho' : 1900
+  };
 
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
   //Code Here
-
+  for (prop in states){
+    if(states[prop] > 30000){
+      alert(prop);
+    }
+  }
 
 
 
@@ -160,12 +171,19 @@ var user = {
 that each value is truthy. If it's not truthy, remove it from the object. */
 
   //Code Here
+  for (prop in user){
+    if(!user[prop]){
+      delete user[prop];
+    }
+  }
 
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
   //Code Here
-
-
+  user.name = 'Luke';
+  user.pwHash = 'asdfqwer';
+  user.username = 'gidgiddonihah13';
+  console.log(user);
 
 
 //NEXT PROBLEM
@@ -188,11 +206,13 @@ var user = {
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
   //Code Here
+  user.name = 'Tyler S. McGinnis';
+  user.email = 'tyler.mcginnis@devmounta.in';
 
 //Now call the sayName method that's on the user object which will alert the users email
 
   //Code Here
-
+  user.sayName();
 
 
 
@@ -204,16 +224,21 @@ var user = {
 //Create an empty object called methodCollection.
 
   //Code Here
+  var methodCollection = {};
 
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
   //Code Here
+  methodCollection.alertHello = function(){ alert('hello') };
+  methodCollection.logHello = function(){ console.log('hello') };
 
 //Now call your alertHello and logHello methods.
 
   //Code Here
+  methodCollection.alertHello();
+  methodCollection.logHello();
 
 
 
